@@ -1,6 +1,6 @@
-#Analysis pipelines for the Bacillus Endophtalmitis
+# Analysis pipelines for the Bacillus Endophtalmitis
 
-##This repository contains analysis pipelines for:
+## This repository contains analysis pipelines for:
 
 RNA-seq alignment, quantification, and quality control
 eQTL mapping and annotation
