@@ -55,17 +55,6 @@ sub_content <- read.table("gene_presence_absence.Rtab",header = T)
 sub_content_n <- sub_content
 rownames(sub_content_n) <- sub_content_n$Gene
 sub_content_n <- sub_content_n[,2:116]
-sub_content_n["plc",] <- 1
-sub_content_n["group_2663",] <- 1
-sub_content_n["plcA","Y16G1233DL_spades"]
-sub_content_n["plcA","Y16G1234DL_spades"]
-sub_content_n["plcA","Y16G1230DL_spades"] <- 1
-sub_content_n["plcA","Y15G1082DL_spades"] <- 1
-sub_content_n["plcA","Y15G1084DL_spades"]
-sub_content_n["ina_1",] <- 1
-sub_content_n["ina_2",] <- 1
-sub_content_n["ina_3",] <- 1
-sub_content_n["plcR",] <- 1
 VF <- read.table("VF1",header = F,sep="\t")
 sub_content_n_vf <- sub_content_n[which(rownames(sub_content_n) %in% VF$V2),]
 sub_content_n_vf <- sub_content_n_vf[order(match(rownames(sub_content_n_vf), VF$V2)),]
@@ -204,8 +193,6 @@ phyper(10,37,135-37,15,lower.tail = F,log.p = F)
 sub_content <- read.table("gene_presence_absence_23.Rtab",header = T)
 rownames(sub_content) <- sub_content$Gene
 sub_content <- sub_content[,2:24]
-sub_content["plcA","GCA_002811445.1_ASM281144v1_genomic"] <- 0
-sub_content["plcA","GCA_001909175.1_ASM190917v1_genomic"] <- 0
 VF <- read.table("VF",header = F,sep="\t")
 sub_content_vf <- sub_content[which(rownames(sub_content) %in% VF$V2),]
 sub_content_vf <- sub_content_vf[order(match(rownames(sub_content_vf), VF$V2)),]
@@ -269,8 +256,6 @@ stomach <- c(name[grep("GCA", name$V1), "V1"],"Y16G1232DL_spades","Y15G1085DL_sp
 sub_content <- read.table("gene_presence_absence_23.Rtab",header = T)
 rownames(sub_content) <- sub_content$Gene
 sub_content <- sub_content[,2:24]
-sub_content["plcA","GCA_002811445.1_ASM281144v1_genomic"] <- 0
-sub_content["plcA","GCA_001909175.1_ASM190917v1_genomic"] <- 0
 remove <- read.table("remove_name")
 sub_content <- sub_content[which(rownames(sub_content) %in% setdiff(rownames(sub_content),remove$V1)),]
 sub_content <-
